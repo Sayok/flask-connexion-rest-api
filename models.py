@@ -1,6 +1,6 @@
 from datetime import datetime
 from config import db, ma
-from marshmallow import fields
+from marshmallow import fields, INCLUDE
 
 
 class Person(db.Model):
@@ -64,6 +64,7 @@ class NoteSchema(ma.SQLAlchemyAutoSchema):
         model = Note
         sqla_session = db.session
         load_instance = True
+        unknown = INCLUDE
 
     person = fields.Nested("NotePersonSchema", default=None)
 

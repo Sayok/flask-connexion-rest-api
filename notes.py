@@ -18,7 +18,7 @@ def read_all():
     notes = Note.query.order_by(db.desc(Note.timestamp)).all()
 
     # Serialize the list of notes from our data
-    note_schema = NoteSchema(many=True, exclude=["person.notes"])
+    note_schema = NoteSchema(many=True)
     data = note_schema.dump(notes)
     return data
 
@@ -110,7 +110,7 @@ def update(person_id, note_id, note):
         db.session.commit()
 
         # return updated note in the response
-        data = schema.dump(update_note).data
+        data = schema.dump(update_note)
 
         return data, 200
 
