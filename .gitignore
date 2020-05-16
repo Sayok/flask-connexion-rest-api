@@ -4,3 +4,5 @@
 __pycache__
 validate.sh
 .flake8
+.vscode
+people.db
