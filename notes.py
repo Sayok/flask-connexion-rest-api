@@ -85,7 +85,7 @@ def update(person_id, note_id, note):
     person id.
     :param person_id:       Id of the person the note is related to
     :param note_id:         Id of the note to update
-    :param content:            The JSON containing the note data
+    :param content:         The JSON containing the note data
     :return:                200 on success
     """
     update_note = (
